@@ -1,0 +1,21 @@
+language: python
+os:
+- linux
+python:
+- '3.6'
+install:
+- pip install -r requirements.txt
+- pip install .
+script: pytest tests
+notifications:
+  slack:
+    secure: qRpWtMcGZE5EAAEhaTCLcVDTZ+ie5AhLzjaOrY60V/lOF+GK/MCn0uzgC0OBaW5TW5T/IbTuBZyd0MZmAJFkUklm6HJdYJ13tais4q3O+xLnKm1rM6+c1jE8JqRhWAUsEqkbEbYcs8rVkuJ5Ma1Aow372OSg/RngIjPw0D8aqJwWsvFKMINhKKi+dHRW9+D6qXf6dwZYq+RbX7KzF4HdHh4b6VLJSNx5SLwlZSjOVz+dfQVE/am3/KcxGGeAHSB+ZxQxaCJGzRo1JQU54ssogTIJwd12VLXTPvz31ZKdrAyWgeNHgBS5oSCi25VymKPW8hn77qvsHht/JT2ccnZ98HFLfVPLbOjA73hxXdHiOQFCMGC5aSYqcXxd7unzkOx7YnBDtisvgQtiITF3gpm7sdK9zhxVCorItYa/zcLfTIhYrYpfZQSTcQIlgPii9q0QteuqxyNgkKmo9IZV1axQdtGA+VlBKtYEJJyTzHz+QLBx2GsmyTZu/HsYgWy6KuS0+9FnSu+I+8Jp4y9aRLs6jK7B+hqvRdTJUM/H2g9F/GddzaJWB2Yuke/PGtLICdb/XnKHDU0b9YEJ5ivKTn7mfnqhpFj8x7uVV/FMo0tacNw5g5L4sICr+YMf7M0BxvHoYdiSLLxrIULgenlgddPjngFN4YAk2yir1XolbLsYtS8=
+deploy:
+  provider: pypi
+  user: pcarolan
+  password:
+    secure: rSAEnQw2Vqc/NBKclNsW5/Y15IKNPup65k6yskNTMZD0ZOpuGuyyZ91efPBmSZ4x4ILICxyxf+uF0gNLMJb+NMZcCB5GdsdObvuUsQd1nxT/53gnbLriFIeZFHrtgvrK5/hLp6fA0636enHRBtMfpjASXQKtOA1T8dvnu/HceJCvyDmXFoRNNON/moJ7alM56BUIEthV5u16LzloSQJ0qosnKBXPVGYsxbJR+k4sh8yfxMxNm3HAJalGUtQ+smLtY5g/Ra0j3KtbhDgQVehJG5aGi8tZyx5nFw+eH81un2vcrqu6Jy5EN4shjCS/lJo83eCWAR0UzvZqP/qvXFKGuvOIrRI0+qKfAcTTJUUvE/iviEEMM1Ovxnt8Gq0JLpscQInGhM+8HIGibFeaJcNqxIyPtpprjHwVAsCZnWp/NzE+oGQEfjZ8WDZWq1V3pgiKYLW20FHyqgtxPBeXXt6bKAdymzbqTU3/G1um5ZWpdnwGOVah2bhiS/cEHjU201JclhEOW82h9Keteryw2eR9aN+d/rklzqIUJ+nKbfNXUEhJq+2lvVrIp7iaib4Pjef8iBvjIzIusGMbuT9ag2yGe07944PS1Zs6LBmpBdd9gVhApn07RtVSRY5bWqZSQz9yeCST8YwfNySuxkZGk2UKlwzdzRij59jHU5dHxr2WF0w=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: pcarolan/cycles
