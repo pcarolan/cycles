@@ -1,5 +1,5 @@
 freezegun==0.3.8
-py==1.4.32
+py==1.10.0
 pytest==3.0.5
 pytest-benchmark==3.0.0
 python-dateutil==2.6.0
